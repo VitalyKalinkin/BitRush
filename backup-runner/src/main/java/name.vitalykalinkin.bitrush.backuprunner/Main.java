@@ -10,6 +10,10 @@ public class Main {
         CommandLineParser parser = new GnuParser();
         CommandLine cmd = parser.parse(options, args);
 
+        if (cmd.hasOption("t")) {
+            System.out.println("AAAAAAA");
+        }
+
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("backup-runner", options);
     }
