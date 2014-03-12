@@ -22,9 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="BitRush" />
+        <module name="backup-runner" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="backup-runner" target="1.6" />
+      <module name="BitRush" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

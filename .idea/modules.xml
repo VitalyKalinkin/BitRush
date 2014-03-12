@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BitRush.iml" filepath="$PROJECT_DIR$/BitRush.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backup-runner/backup-runner.iml" filepath="$PROJECT_DIR$/backup-runner/backup-runner.iml" />
     </modules>
   </component>
 </project>
