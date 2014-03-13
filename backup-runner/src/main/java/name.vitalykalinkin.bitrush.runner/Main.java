@@ -1,11 +1,10 @@
-package name.vitalykalinkin.bitrush.backuprunner;
+package name.vitalykalinkin.bitrush.runner;
 
 import org.apache.commons.cli.*;
 
 public class Main {
     public static void main(String args[]) throws ParseException {
-        Options options = new Options();
-        options.addOption("t", false, "Test option");
+        Options options = OptionsDescription.getOptions();
 
         CommandLineParser parser = new GnuParser();
         CommandLine cmd = parser.parse(options, args);

@@ -37,8 +37,8 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>name.vitalykalinkin.bitrush.backuprunner.Main</mainClass>
-                            <packageName>name.vitalykalinkin.bitrush.backuprunner</packageName>
+                            <mainClass>name.vitalykalinkin.bitrush.runner.Main</mainClass>
+                            <packageName>name.vitalykalinkin.bitrush.runner</packageName>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
