@@ -6,7 +6,7 @@ public abstract class OptionsDescription {
     public static Options getOptions(){
         Options options = new Options();
 
-        options.addOption("t", "test", false, "Testing test");
+        options.addOption("c", "config", true, "Configuration file");
 
         return options;
     }
