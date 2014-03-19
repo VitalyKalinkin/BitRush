@@ -11,7 +11,7 @@ public class Main {
     private final static Log log = LogFactory.getLog(Main.class);
 
     public static void main(String args[]){
-        Options options = OptionsDescription.getOptions();
+        Options options = OptionDescription.getOptions();
 
         CommandLineParser parser = new GnuParser();
 
