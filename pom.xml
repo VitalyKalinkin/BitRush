@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>name.vitalykalinkin.bitrush</groupId>
+    <groupId>name.vitaly.kalinkin.bitrush</groupId>
     <artifactId>BitRush</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -12,12 +12,17 @@
     </modules>
 
     <packaging>pom</packaging>
+    <name>Root Package</name>
 
     <properties>
-        <version.commons-cli>1.2</version.commons-cli>
-        <version.aws-java-sdk>1.7.3</version.aws-java-sdk>
-        <version.commons-logging>1.1.3</version.commons-logging>
-        <version.log4j>1.2.17</version.log4j>
+        <!-- Versions -->
+        <commons-cli.version>1.2</commons-cli.version>
+        <aws-java-sdk.version>1.7.3</aws-java-sdk.version>
+        <commons-logging.version>1.1.3</commons-logging.version>
+        <log4j.version>1.2.17</log4j.version>
+        <junit.version>4.11</junit.version>
+
+        <!-- Other options -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
