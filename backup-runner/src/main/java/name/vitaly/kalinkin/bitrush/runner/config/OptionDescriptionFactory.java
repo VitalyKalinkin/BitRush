@@ -1,4 +1,4 @@
-package name.vitaly.kalinkin.bitrush.runner;
+package name.vitaly.kalinkin.bitrush.runner.config;
 
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;

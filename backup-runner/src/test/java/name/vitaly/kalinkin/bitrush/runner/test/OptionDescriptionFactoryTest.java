@@ -1,6 +1,6 @@
 package name.vitaly.kalinkin.bitrush.runner.test;
 
-import name.vitaly.kalinkin.bitrush.runner.OptionDescriptionFactory;
+import name.vitaly.kalinkin.bitrush.runner.config.OptionDescriptionFactory;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.junit.Assert;

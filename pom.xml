@@ -21,6 +21,8 @@
         <commons-logging.version>1.1.3</commons-logging.version>
         <log4j.version>1.2.17</log4j.version>
         <junit.version>4.11</junit.version>
+        <slf4j.version>1.7.6</slf4j.version>
+        <typesafe.config.version>1.2.0</typesafe.config.version>
 
         <!-- Other options -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,8 +47,8 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>name.vitalykalinkin.bitrush.runner.Main</mainClass>
-                            <packageName>name.vitalykalinkin.bitrush.runner</packageName>
+                            <mainClass>name.vitaly.kalinkin.bitrush.runner.Main</mainClass>
+                            <packageName>name.vitaly.kalinkin.bitrush.runner</packageName>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
