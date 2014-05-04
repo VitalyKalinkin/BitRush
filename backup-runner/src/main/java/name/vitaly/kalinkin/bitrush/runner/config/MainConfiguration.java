@@ -9,7 +9,9 @@ import java.util.List;
 public class MainConfiguration {
 
     private static final String SOURCE_FOLDERS_KEY = "source_folders";
+    private static final String TEMPORARY_RESULT_FOLDER = "temp_folder";
     private List<String> sourceFolders;
+    private String temporaryReactorFolder;
 
     public List<String> getSourceFolders() {
         return sourceFolders;
@@ -21,10 +23,15 @@ public class MainConfiguration {
         return parseFromConfig(config);
     }
 
+    public String getTemporaryReactorFolder() {
+        return temporaryReactorFolder;
+    }
+
     private static MainConfiguration parseFromConfig(Config config) {
         MainConfiguration result = new MainConfiguration();
         
         result.sourceFolders = config.getStringList(SOURCE_FOLDERS_KEY);
+        result.temporaryReactorFolder = config.getString(TEMPORARY_RESULT_FOLDER);
         
         return result;
     }

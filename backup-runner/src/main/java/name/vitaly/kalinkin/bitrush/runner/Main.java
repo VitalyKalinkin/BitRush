@@ -1,8 +1,15 @@
 package name.vitaly.kalinkin.bitrush.runner;
 
+import com.google.inject.Binder;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Module;
+import name.vitaly.kalinkin.bitrush.runner.archive.Archiver;
 import name.vitaly.kalinkin.bitrush.runner.config.CommandLineOptions;
 import name.vitaly.kalinkin.bitrush.runner.config.MainConfiguration;
 import name.vitaly.kalinkin.bitrush.runner.config.OptionDescriptionFactory;
+import name.vitaly.kalinkin.bitrush.runner.reactor.FileSystemReactor;
+import name.vitaly.kalinkin.bitrush.runner.reactor.Reactor;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +29,13 @@ public class Main {
         log.info("Main configuration read: {}", mainConfiguration);
 
         List<String> sourceFolders = mainConfiguration.getSourceFolders();
+        final String temporaryReactorFolder = mainConfiguration.getTemporaryReactorFolder();
+
+        Injector injector = Guice.createInjector(new MainModule());
+        injector = injector.createChildInjector((Binder binder) -> binder.bind(Reactor.class).toInstance(new FileSystemReactor(temporaryReactorFolder)));
+
+        Archiver archiver = injector.getInstance(Archiver.class);
+        archiver.archive(sourceFolders);
     }
 
     private static MainConfiguration readMainConfiguration(CommandLineOptions configOptions) {
