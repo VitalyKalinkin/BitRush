@@ -1,0 +1,4 @@
+rootProject.name = 'bitrush-main'
+include ':backup-runner'
+
+project(':backup-runner').projectDir = "$rootDir/backup-runner" as File
