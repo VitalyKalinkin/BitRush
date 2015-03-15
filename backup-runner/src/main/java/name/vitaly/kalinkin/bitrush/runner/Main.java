@@ -3,7 +3,6 @@ package name.vitaly.kalinkin.bitrush.runner;
 import com.google.inject.Binder;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
 import name.vitaly.kalinkin.bitrush.runner.archive.Archiver;
 import name.vitaly.kalinkin.bitrush.runner.config.CommandLineOptions;
 import name.vitaly.kalinkin.bitrush.runner.config.MainConfiguration;
@@ -21,6 +20,9 @@ public class Main {
 
     public static void main(String args[]) {
         log.info("Starting backup runner...");
+
+        Thread.setDefaultUncaughtExceptionHandler(
+                (thread, ex) -> log.error("Caught fatal exception in thread '{}'", thread, ex));
 
         CommandLineOptions commandLineOptions = parseCommandLine(args);
         log.info("Command line options parsed: {}", commandLineOptions);
@@ -52,8 +54,7 @@ public class Main {
 
         try {
             CommandLine cmd = parser.parse(options, args);
-            CommandLineOptions result = new CommandLineOptions(cmd);
-            return result;
+            return new CommandLineOptions(cmd);
         } catch (ParseException ex) {
             log.error("Could not parse command line options: {}", ex.getMessage());
             HelpFormatter formatter = new HelpFormatter();

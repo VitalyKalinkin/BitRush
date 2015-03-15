@@ -5,9 +5,10 @@
 *.war
 *.ear
 
+# Idea projects
 **/.idea
-**/target/
-**/.idea/libraries/
-.gradle
+**/target
 **/build
 *.iml
+
+.gradle

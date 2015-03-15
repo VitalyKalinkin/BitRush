@@ -2,7 +2,7 @@ allprojects  {
   apply plugin: 'maven'
 
   group = 'name.vitaly.kalinkin.bitrush'
-  version = '1.0-SNAPSHOT'
+  version = '0.0.1-SNAPSHOT'
 }
 
 subprojects {
@@ -12,8 +12,17 @@ subprojects {
   targetCompatibility = 1.8
 
   repositories {
-    mavenLocal()
-    
-    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenCentral()
   }
+}
+
+task deployToNas(dependsOn : ":backup-runner:assemble") {
+    doFirst {
+        println "Deploying to NAS..."
+        copy {
+            from "backup-runner/build/libs"
+            into "/Volumes/public/bitrush/"
+        }
+        println "Deploying has been completed..."
+    }
 }
