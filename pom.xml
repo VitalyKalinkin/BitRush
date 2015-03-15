@@ -4,20 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>name.vitalykalinkin.bitrush</groupId>
-    <artifactId>BitRush</artifactId>
+    <groupId>name.vitaly.kalinkin.bitrush</groupId>
+    <artifactId>bitrush-main</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>backup-runner</module>
     </modules>
 
     <packaging>pom</packaging>
+    <name>Root Package</name>
 
     <properties>
-        <version.commons-cli>1.2</version.commons-cli>
-        <version.aws-java-sdk>1.7.3</version.aws-java-sdk>
-        <version.commons-logging>1.1.3</version.commons-logging>
-        <version.log4j>1.2.17</version.log4j>
+        <!-- Versions -->
+        <commons-cli.version>1.2</commons-cli.version>
+        <aws-java-sdk.version>1.7.3</aws-java-sdk.version>
+        <commons-logging.version>1.1.3</commons-logging.version>
+        <log4j.version>1.2.17</log4j.version>
+        <junit.version>4.11</junit.version>
+        <slf4j.version>1.7.6</slf4j.version>
+        <typesafe.config.version>1.2.0</typesafe.config.version>
+        <guice.version>3.0</guice.version>
+
+        <!-- Other options -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -40,8 +48,8 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>name.vitalykalinkin.bitrush.runner.Main</mainClass>
-                            <packageName>name.vitalykalinkin.bitrush.runner</packageName>
+                            <mainClass>name.vitaly.kalinkin.bitrush.runner.Main</mainClass>
+                            <packageName>name.vitaly.kalinkin.bitrush.runner</packageName>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>

@@ -5,5 +5,6 @@
 *.war
 *.ear
 
-.idea/workspace.xml
-target
+**/.idea/workspace.xml
+**/target/
+**/.idea/libraries/
